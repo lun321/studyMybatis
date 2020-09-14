@@ -48,7 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    
+    @Autowired
+    CustomizeAuthenticationEntryPoint customizeAuthenticationEntryPoint;
     @Autowired
     UserService userService;
     @Override
@@ -150,8 +151,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .permitAll()	
             .and().csrf().disable();
 
-            // http.exceptionHandling().
-            // authenticationEntryPoint(customizeAuthenticationEntryPoint);
+            http.exceptionHandling().
+            authenticationEntryPoint(customizeAuthenticationEntryPoint);//用户未登录处理器，即用户访问数据接口时如果发现用户未登录，则由该处理器处理。这里的例子为返回一个json
             
         //     http.sessionManagement()//只允许一个用户登录,如果同一个账户两次登录,那么第一个账户将被踢下线,跳转到登录页面
         //        	.maximumSessions(1).maxSessionsPreventsLogin(false)

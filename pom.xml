@@ -48,7 +48,13 @@
 			<optional>true</optional>
 		 </dependency>
 		  <!-- 热部署 end-->
-
+		<!-- JSONObject依赖 start-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.28</version>
+		</dependency>
+		<!-- JSONObject依赖 end-->
 		  <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
