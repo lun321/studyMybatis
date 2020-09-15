@@ -4,7 +4,7 @@
  * @Author: lijialun
  * @Date: 2020-09-14 15:06:54
  * @LastEditors: lijialun
- * @LastEditTime: 2020-09-14 17:40:18
+ * @LastEditTime: 2020-09-15 16:54:04
  */
 package com.example.demo.entity;
 
@@ -20,20 +20,10 @@ import org.springframework.security.core.userdetails.UserDetails;
  * @Time: 14:39
  */
 public class User implements Serializable, UserDetails {
-    private Integer id;
+    private String systemid;
     private String userName;
     private String passWord;
     private String realName;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    
 
     public void setUserName(String userName) {
         this.userName = userName;
@@ -55,7 +45,7 @@ public class User implements Serializable, UserDetails {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", userName='" + userName + '\'' + ", passWord='" + passWord + '\''
+        return "User{" + "systemid=" + systemid + ", userName='" + userName + '\'' + ", passWord='" + passWord + '\''
                 + ", realName='" + realName + '\'' + '}';
     }
 
@@ -99,6 +89,14 @@ public class User implements Serializable, UserDetails {
     public String getUsername() {
         // TODO Auto-generated method stub
         return userName;
+    }
+
+    public String getSystemid() {
+        return systemid;
+    }
+
+    public void setSystemid(String systemid) {
+        this.systemid = systemid;
     }
 
 

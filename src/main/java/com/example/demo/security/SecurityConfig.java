@@ -43,7 +43,6 @@ import org.springframework.security.web.session.SimpleRedirectSessionInformation
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-   //$10$RMuFXGQ5AtH4wOvkUqyvuecpqUSeoxZYqilXzbz50dceRsga.WYiq admin的密码123
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

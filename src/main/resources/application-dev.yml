@@ -16,4 +16,5 @@ logging:
   level:
     com:
       example:
-        mapper : debug
+        demo:
+          mapper : debug
