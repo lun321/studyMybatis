@@ -4,7 +4,7 @@
  * @Author: lijialun
  * @Date: 2020-09-14 19:56:57
  * @LastEditors: lijialun
- * @LastEditTime: 2020-09-15 16:41:27
+ * @LastEditTime: 2020-09-15 18:07:17
  */
 package com.example.demo.controller;
 
@@ -55,6 +55,6 @@ public class UserController {
 
     @RequestMapping("buildcode")
     public void buildcode(){
-        buildcode.buildController("com.example.demo", "test");
+        buildcode.buildcode();
     }
 }

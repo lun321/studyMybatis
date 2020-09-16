@@ -1,20 +1,19 @@
 /*
  * @Descripttion: 
  * @version: 
- * @Author: jlunli
- * @Date: 2020-09-14 19:56:57
- * @LastEditors: jlunli
- * @LastEditTime: 2020-09-16 14:40:22
+ * @Author: lijialun
+ * @Date: 2020-09-14 16:44:24
+ * @LastEditors: lijialun
+ * @LastEditTime: 2020-09-15 10:12:23
  */
-
-package com.example.demo.security;
+package com.example.demo.Response;
 
 
 public class RespBean {
     private Integer status;   //状态码
     private String msg;       //返回信息
     private Object obj;       //数据
-
+ 
     private RespBean() {
     }
  
