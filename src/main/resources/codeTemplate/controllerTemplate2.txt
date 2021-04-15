@@ -4,14 +4,14 @@
  * @Author: jlunli
  * @Date: 2020-09-14 15:06:54
  * @LastEditors: jlunli
- * @LastEditTime: 2021-04-14 17:02:24
+ * @LastEditTime: 2021-04-15 10:04:03
  */
 
 import com.example.demo.Response.RespBean;
 import com.example.demo.entity.<className>;
 import com.example.demo.service.<className>Service;
 import com.example.demo.util.buildcode;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,8 +29,12 @@ public class <className>Controller {
 
     
     @RequestMapping(value="<className>/{systemid}",method = RequestMethod.GET)
-    public <className> Get<className>(@PathVariable String systemid){
+    public <className> Get<className>(@PathVariable int systemid){
         return <varName>Service.Sel(systemid);
+    }
+    @RequestMapping(value="<className>List",method = RequestMethod.GET)
+    public List<<className>> Get<className>List(){
+        return <varName>Service.SelList();
     }
     @RequestMapping(value="<className>",method = RequestMethod.PUT)
     public RespBean update<className>(@RequestBody <className> <varName>){
@@ -41,7 +45,7 @@ public class <className>Controller {
         return <varName>Service.insert(<varName>);
     }
     @RequestMapping(value="<className>/{systemid}",method = RequestMethod.DELETE)
-    public RespBean delete<className>(@PathVariable String systemid){
+    public RespBean delete<className>(@PathVariable int systemid){
         return <varName>Service.delete(systemid);
     }
 

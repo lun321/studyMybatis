@@ -1,0 +1,41 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: jlunli
+ * @Date: 2020-09-14 15:06:54
+ * @LastEditors: jlunli
+ * @LastEditTime: 2021-04-15 15:12:18
+ */
+
+
+import com.example.demo.entity.<className>;
+import java.util.List;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
+ 
+@Mapper
+public interface <className>Mapper {
+    @Select("SELECT * FROM <varName> WHERE systemid = #{systemid}")
+    <className> Sel(@Param("systemid") int systemid);
+
+    @Select("SELECT * FROM <varName> WHERE deleteflag<>1")
+    List<<className>> SelList();
+
+    @Update("update <varName> set <updateColumns> where systemid=#{<varName>Base.systemid}")
+    int update(@Param("<varName>Base") <className> <varName>Base);
+    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="<varName>Base.systemid", before=false, resultType=Integer.class)
+    @Options(useGeneratedKeys = true, keyProperty = "systemid")
+    @Insert("insert into <varName>(<insertColumns>) values(<insertValues>)")
+    int insert(@Param("<varName>Base") <className> <varName>Base);
+
+    @Update("update <varName> set deleteflag=1 where systemid = #{systemid}")
+    int delete(@Param("systemid") int systemid);
+
+
+}

@@ -1,0 +1,40 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: jlunli
+ * @Date: 2020-09-14 15:06:54
+ * @LastEditors: jlunli
+ * @LastEditTime: 2021-04-14 16:41:03
+ */
+
+
+import java.io.Serializable;
+import java.util.Collection;
+
+
+
+public class <className> implements Serializable {
+    private int systemid;
+    private int deleteflag=0;
+<modal_fields>
+
+    
+
+    public int getSystemid() {
+        return systemid;
+    }
+
+    public void setSystemid(int systemid) {
+        this.systemid = systemid;
+    }
+
+    public int getDeleteflag(){
+        return deleteflag;
+    }
+
+    public void setDeleteflag(int deleteflag){
+        this.deleteflag=deleteflag;
+    }
+<modal_methods>
+
+}
